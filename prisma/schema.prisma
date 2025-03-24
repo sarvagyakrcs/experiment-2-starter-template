@@ -7,4 +7,8 @@ datasource db {
   url      = env("MONGODB_URI")
 }
 
-// add your models here
+model Todo {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  completed Boolean  @default(false)
+}
